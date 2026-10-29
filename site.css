@@ -32,6 +32,8 @@ a:visited { color: #551a8b; }
 .status span { flex: 1; padding: 1px 6px;
   border-top: 1px solid var(--grey); border-left: 1px solid var(--grey); border-right: 1px solid var(--white); border-bottom: 1px solid var(--white); }
 
+.status span:empty { display: none; }
+
 h1 { font-size: 34px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -.02em; }
 h2 { font-size: 15px; margin: 18px 0 4px; color: var(--navy); }
 h2:first-child { margin-top: 0; }
