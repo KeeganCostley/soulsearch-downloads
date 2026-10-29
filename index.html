@@ -6,90 +6,31 @@
 <title>SoulSearch</title>
 <meta name="description" content="Watches your Spotify, SoundCloud, YouTube, Apple Music and Shazam likes, finds the files on Soulseek, and puts them in Rekordbox.">
 <link rel="icon" href="icon_32.png">
-<style>
-  /* Same late-90s Windows look as the app, but on a black desktop with amber title bars. */
-  :root {
-    --face: #c8c4bc; --face-lit: #ecebe6; --white: #fff; --grey: #7a7a7a; --dark: #333;
-    --desk: #0c0c0c; --amber: #ff8a1f; --amber-dark: #7a2a00; --ink: #000; --ink-soft: #3d3d3d;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; color: var(--ink);
-    background-color: var(--desk);
-    background-image: radial-gradient(#1c1c1c 1px, transparent 1px); background-size: 4px 4px;   /* dithered desktop */
-    font: 15px/1.5 Tahoma, "Segoe UI", Verdana, Geneva, sans-serif;
-  }
-  main { max-width: 780px; margin: 0 auto; padding: 28px 16px 40px; }
-
-  .win { background: var(--face); padding: 3px; margin-bottom: 22px;
-         border-top: 1px solid var(--white); border-left: 1px solid var(--white);
-         border-right: 1px solid var(--dark); border-bottom: 1px solid var(--dark);
-         box-shadow: inset -1px -1px 0 var(--grey), inset 1px 1px 0 var(--face-lit), 6px 6px 0 rgba(0,0,0,.55); }
-  .title { background: linear-gradient(90deg, var(--amber-dark), var(--amber)); color: #fff; font-weight: bold;
-           padding: 3px 4px 3px 6px; display: flex; align-items: center; gap: 6px; }
-  .title img { width: 16px; height: 16px; image-rendering: pixelated; }
-  .title .ctl { margin-left: auto; display: flex; gap: 2px; }
-  .ctl i { width: 16px; height: 14px; background: var(--face); color: #000; font: bold 10px/12px Tahoma, sans-serif; text-align: center;
-           border-top: 1px solid var(--white); border-left: 1px solid var(--white); border-right: 1px solid var(--dark); border-bottom: 1px solid var(--dark); font-style: normal; }
-  .body { padding: 16px 18px 18px; }
-  .status { display: flex; gap: 3px; padding: 3px 3px 1px; font-size: 12px; color: var(--ink-soft); }
-  .status span { flex: 1; padding: 1px 6px; border-top: 1px solid var(--grey); border-left: 1px solid var(--grey); border-right: 1px solid var(--white); border-bottom: 1px solid var(--white); }
-
-  h1 { font-size: 34px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -.02em; }
-  h2 { font-size: 15px; margin: 0 0 6px; }
-  p { margin: 0 0 10px; }
-  .big { font-size: 18px; }
-  .muted { color: var(--ink-soft); }
-  ul { margin: 0; padding-left: 20px; }
-  li { margin-bottom: 5px; }
-
-  .downloads { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 4px; }
-  .dl { display: block; text-decoration: none; color: var(--ink); text-align: center; padding: 14px 10px; background: var(--face);
-        border-top: 1px solid var(--white); border-left: 1px solid var(--white); border-right: 1px solid var(--dark); border-bottom: 1px solid var(--dark);
-        box-shadow: inset -1px -1px 0 var(--grey), inset 1px 1px 0 var(--face-lit); }
-  .dl:active { border-top-color: var(--dark); border-left-color: var(--dark); border-right-color: var(--white); border-bottom-color: var(--white); box-shadow: inset 1px 1px 0 var(--grey); }
-  .dl:focus-visible { outline: 1px dotted var(--ink); outline-offset: -6px; }
-  .dl b { display: block; font-size: 17px; }
-  .dl small { display: block; font-size: 12px; color: var(--ink-soft); }
-  .dl.mine { background: #ffe9c9; }
-  .dl.soon { color: #777; pointer-events: none; }
-
-  .shot { margin-top: 4px; background: #fff; padding: 0; line-height: 0;
-          border-top: 1px solid var(--grey); border-left: 1px solid var(--grey); border-right: 1px solid var(--white); border-bottom: 1px solid var(--white); box-shadow: inset 1px 1px 0 var(--dark); }
-  .shot img { width: 100%; height: auto; display: block; }
-
-  details { margin: 0 0 6px; }
-  summary { cursor: pointer; font-weight: bold; }
-  details ol { margin: 6px 0 4px; padding-left: 22px; }
-  a { color: #7a2a00; }
-  footer { color: #8a8a8a; font-size: 12px; text-align: center; padding-top: 4px; }
-
-  @media (max-width: 560px) { .downloads { grid-template-columns: 1fr; } h1 { font-size: 28px; } .win { box-shadow: inset -1px -1px 0 var(--grey), inset 1px 1px 0 var(--face-lit), 3px 3px 0 rgba(0,0,0,.55); } }
-</style>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <main>
-
 <div class="win">
   <div class="title"><img src="bird.png" alt="">SoulSearch<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="menu">
+    <a href="index.html" aria-current="page">Home</a><a href="guide.html">Setup guide</a><a href="faq.html">FAQ</a><a href="https://github.com/KeeganCostley/soulsearch-downloads/releases">All versions</a>
+  </div>
   <div class="body">
     <h1>SoulSearch</h1>
     <p class="big">Watches what you like on Spotify, SoundCloud, YouTube, Apple Music and Shazam. Finds the files on Soulseek. Puts them in Rekordbox.</p>
     <div class="downloads">
-      <a class="dl" id="dl-win" href="#first-run" data-asset="SoulSearch.exe"><b>Windows</b><small data-meta>Windows 10 or 11</small></a>
-      <a class="dl" id="dl-mac" href="#first-run" data-asset="SoulSearch-mac-arm64.zip"><b>Mac</b><small data-meta>Apple Silicon (M1 and newer)</small></a>
+      <a class="dl" data-os="win" href="guide.html#first-run" data-asset="SoulSearch.exe"><b>Windows</b><small data-meta>Windows 10 or 11</small></a>
+      <a class="dl" data-os="mac" href="guide.html#first-run" data-asset="SoulSearch-mac-arm64.zip"><b>Mac</b><small data-meta>Apple Silicon (M1 and newer)</small></a>
     </div>
   </div>
-  <div class="status"><span id="release-note">Free. No Intel Mac build yet.</span></div>
+  <div class="status"><span>Free. No Intel Mac build yet.</span><span>Next: <a href="guide.html">setup guide</a></span></div>
 </div>
-
 <div class="win">
   <div class="title">Sync<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
-  <div style="padding:3px;">
+  <div class="body" style="padding:3px;">
     <div class="shot"><img src="app-sync.png" alt="The Sync page: Spotify likes, playlists and SoundCloud, each with Sync and Back Up buttons" width="1600" height="735"></div>
   </div>
 </div>
-
 <div class="win">
   <div class="title">What it does<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
   <div class="body">
@@ -103,53 +44,8 @@
   </div>
 </div>
 
-<div class="win" id="first-run">
-  <div class="title">First run<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
-  <div class="body">
-    <p>Your computer won't recognise the app. It isn't signed yet.</p>
-    <details id="help-win"><summary>Windows</summary>
-      <ol><li>Open <b>SoulSearch.exe</b>.</li><li>On the blue warning, click <b>More info</b>, then <b>Run anyway</b>.</li></ol>
-    </details>
-    <details id="help-mac"><summary>Mac</summary>
-      <ol><li>Unzip it and drag <b>SoulSearch</b> to Applications.</li><li>Right-click it, <b>Open</b>, then <b>Open</b> again.</li><li>Still blocked: System Settings, Privacy &amp; Security, <b>Open Anyway</b>.</li></ol>
-    </details>
-    <p class="muted" style="margin-top:10px;">You need Rekordbox. Downloads use real data, so watch it on a hotspot.</p>
-  </div>
-</div>
-
 <footer>Not affiliated with Spotify, Apple, Shazam, Rekordbox or Soulseek.</footer>
 </main>
-
-<script>
-  // The files live in the latest release of the public downloads repo. Read it so the buttons show the
-  // real version and size, and a platform with no file yet says so.
-  const REPO = "KeeganCostley/soulsearch-downloads";
-  const cards = [...document.querySelectorAll(".dl")];
-
-  const ua = navigator.userAgent || "";
-  const platform = navigator.platform || ua;
-  const onMac = /Mac/i.test(platform) && !/iPhone|iPad/i.test(ua);
-  const onWin = /Win/i.test(platform);
-  (onMac ? document.getElementById("dl-mac") : onWin ? document.getElementById("dl-win") : null)?.classList.add("mine");
-  (onMac ? document.getElementById("help-mac") : onWin ? document.getElementById("help-win") : null)?.setAttribute("open", "");
-
-  fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { Accept: "application/vnd.github+json" } })
-    .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-    .then((rel) => {
-      const when = new Date(rel.published_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
-      for (const card of cards) {
-        const asset = (rel.assets || []).find((a) => a.name === card.dataset.asset);
-        const meta = card.querySelector("[data-meta]");
-        if (asset) {
-          card.href = asset.browser_download_url;
-          meta.textContent = `${rel.tag_name} · ${(asset.size / 1048576).toFixed(0)} MB · ${when}`;
-        } else {
-          card.classList.add("soon");
-          meta.textContent = "Not up yet";
-        }
-      }
-    })
-    .catch(() => { for (const card of cards) card.href = `https://github.com/${REPO}/releases/latest`; });
-</script>
+<script src="site.js"></script>
 </body>
 </html>

@@ -1,0 +1,73 @@
+/* SoulSearch site: the app's own palette (grey chrome, navy title bars, bevels) on a black desktop. */
+:root {
+  --face: #d4d0c8; --face-lit: #efeeea; --white: #fff; --grey: #808080; --dark: #404040;
+  --navy: #000080; --navy-lit: #1084d0; --ink: #000; --ink-soft: #4a4a4a; --desk: #0c0c0c;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background-color: var(--desk);
+  background-image: radial-gradient(#1c1c1c 1px, transparent 1px); background-size: 4px 4px;
+  font: 15px/1.5 Tahoma, "Segoe UI", Verdana, Geneva, sans-serif;
+}
+main { max-width: 800px; margin: 0 auto; padding: 24px 16px 40px; }
+a { color: var(--navy); }
+a:visited { color: #551a8b; }
+
+.win { background: var(--face); padding: 3px; margin-bottom: 22px;
+  border-top: 1px solid var(--white); border-left: 1px solid var(--white);
+  border-right: 1px solid var(--dark); border-bottom: 1px solid var(--dark);
+  box-shadow: inset -1px -1px 0 var(--grey), inset 1px 1px 0 var(--face-lit), 6px 6px 0 rgba(0,0,0,.55); }
+.title { background: linear-gradient(90deg, var(--navy), var(--navy-lit)); color: #fff; font-weight: bold;
+  padding: 3px 4px 3px 6px; display: flex; align-items: center; gap: 6px; }
+.title img { width: 16px; height: 16px; image-rendering: pixelated; }
+.ctl { margin-left: auto; display: flex; gap: 2px; }
+.ctl i { width: 16px; height: 14px; background: var(--face); color: #000; font: bold 10px/12px Tahoma, sans-serif; text-align: center; font-style: normal;
+  border-top: 1px solid var(--white); border-left: 1px solid var(--white); border-right: 1px solid var(--dark); border-bottom: 1px solid var(--dark); }
+.menu { display: flex; flex-wrap: wrap; gap: 2px; padding: 3px 2px; border-bottom: 1px solid var(--grey); }
+.menu a { color: var(--ink); text-decoration: none; padding: 1px 10px; }
+.menu a:hover { background: var(--navy); color: #fff; }
+.menu a[aria-current] { font-weight: bold; }
+.body { padding: 16px 18px 18px; }
+.status { display: flex; gap: 3px; padding: 3px 3px 1px; font-size: 12px; color: var(--ink-soft); }
+.status span { flex: 1; padding: 1px 6px;
+  border-top: 1px solid var(--grey); border-left: 1px solid var(--grey); border-right: 1px solid var(--white); border-bottom: 1px solid var(--white); }
+
+h1 { font-size: 34px; line-height: 1.1; margin: 0 0 8px; letter-spacing: -.02em; }
+h2 { font-size: 15px; margin: 18px 0 4px; color: var(--navy); }
+h2:first-child { margin-top: 0; }
+p { margin: 0 0 10px; }
+.big { font-size: 18px; }
+.muted { color: var(--ink-soft); }
+ul, ol { margin: 0 0 10px; padding-left: 22px; }
+li { margin-bottom: 5px; }
+code, kbd { font: 13px Consolas, "Courier New", monospace; background: #fff; padding: 0 4px;
+  border-top: 1px solid var(--grey); border-left: 1px solid var(--grey); border-right: 1px solid var(--white); border-bottom: 1px solid var(--white); }
+
+.downloads { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 4px; }
+.dl { display: block; text-decoration: none; color: var(--ink); text-align: center; padding: 14px 10px; background: var(--face);
+  border-top: 1px solid var(--white); border-left: 1px solid var(--white); border-right: 1px solid var(--dark); border-bottom: 1px solid var(--dark);
+  box-shadow: inset -1px -1px 0 var(--grey), inset 1px 1px 0 var(--face-lit); }
+.dl:visited { color: var(--ink); }
+.dl:active { border-top-color: var(--dark); border-left-color: var(--dark); border-right-color: var(--white); border-bottom-color: var(--white); box-shadow: inset 1px 1px 0 var(--grey); }
+.dl:focus-visible { outline: 1px dotted var(--ink); outline-offset: -6px; }
+.dl b { display: block; font-size: 17px; }
+.dl small { display: block; font-size: 12px; color: var(--ink-soft); }
+.dl.mine { background: var(--face-lit); outline: 2px solid var(--navy); outline-offset: -4px; }
+.dl.soon { color: #777; pointer-events: none; }
+
+.shot { background: #fff; line-height: 0;
+  border-top: 1px solid var(--grey); border-left: 1px solid var(--grey); border-right: 1px solid var(--white); border-bottom: 1px solid var(--white); box-shadow: inset 1px 1px 0 var(--dark); }
+.shot img { width: 100%; height: auto; display: block; }
+
+details { margin: 0 0 6px; }
+summary { cursor: pointer; font-weight: bold; }
+details > :not(summary) { margin-top: 6px; }
+.q { font-weight: bold; margin: 14px 0 2px; }
+.q:first-child { margin-top: 0; }
+footer { color: #8a8a8a; font-size: 12px; text-align: center; padding-top: 4px; }
+footer a { color: #aaa; }
+
+@media (max-width: 560px) {
+  .downloads { grid-template-columns: 1fr; } h1 { font-size: 28px; }
+  .win { box-shadow: inset -1px -1px 0 var(--grey), inset 1px 1px 0 var(--face-lit), 3px 3px 0 rgba(0,0,0,.55); }
+}

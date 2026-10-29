@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup guide - SoulSearch</title>
+<meta name="description" content="How to set up SoulSearch: Rekordbox folder, Spotify, SoundCloud, YouTube, Apple Music, Shazam and crate digging.">
+<link rel="icon" href="icon_32.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<main>
+<div class="win">
+  <div class="title"><img src="bird.png" alt="">SoulSearch<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="menu">
+    <a href="index.html">Home</a><a href="guide.html" aria-current="page">Setup guide</a><a href="faq.html">FAQ</a><a href="https://github.com/KeeganCostley/soulsearch-downloads/releases">All versions</a>
+  </div>
+  <div class="body">
+    <h1>Setup guide</h1>
+    <p>The app has a Setup page that walks through this in order. This is the same thing with the reasons.</p>
+  </div>
+</div>
+<div class="win">
+  <div class="title">0. First run<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="body">
+    <p id="first-run">Your computer won't recognise the app. It isn't signed yet.</p>
+    <details data-os="win"><summary>Windows</summary>
+      <ol><li>Open <b>SoulSearch.exe</b>.</li><li>On the blue warning, click <b>More info</b>, then <b>Run anyway</b>.</li></ol>
+    </details>
+    <details data-os="mac"><summary>Mac</summary>
+      <ol><li>Unzip it and drag <b>SoulSearch</b> to Applications.</li><li>Right-click it, <b>Open</b>, then <b>Open</b> again.</li><li>Still blocked: System Settings, Privacy &amp; Security, <b>Open Anyway</b>.</li></ol>
+    </details>
+  </div>
+</div>
+<div class="win">
+  <div class="title">1. Folder and downloads<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="body">
+    <h2>Rekordbox folder</h2>
+    <p>Pick the folder where downloads go. Each source gets its own folder next to it, which becomes its own playlist in Rekordbox.</p>
+    <h2>slskd and ffmpeg</h2>
+    <p>Two buttons on the Setup page, <b>Install</b> next to each. slskd is the Soulseek client SoulSearch drives. ffmpeg is for the SoundCloud fallback. Both come from their official sources.</p>
+    <h2>Soulseek login</h2>
+    <p>Nothing to sign up for. The first time it starts it makes a private login of its own and keeps the password in your computer's secure store. Only fill the boxes in if you already have an account you'd rather use.</p>
+  </div>
+</div>
+<div class="win">
+  <div class="title">2. Your sources<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="body">
+    <h2>Spotify</h2>
+    <p>This one takes a few minutes. Spotify makes you register an app to read your own likes.</p>
+    <ol>
+      <li>Go to <a href="https://developer.spotify.com/dashboard">developer.spotify.com/dashboard</a> and create an app. Any name and description.</li>
+      <li>In its settings add the Redirect URI <code>http://127.0.0.1:8888/callback</code>. Exactly that. <code>localhost</code> won't work.</li>
+      <li>Copy the Client ID and Client Secret into the Setup page.</li>
+    </ol>
+    <h2>SoundCloud</h2>
+    <p>No account or key. Paste your public profile link.</p>
+    <h2>YouTube</h2>
+    <p>No account or key. On the Sync page, add playlists that are public or unlisted. Add as many as you like.</p>
+    <h2>Apple Music and Shazam</h2>
+    <p>On the Sync page, paste a shared Apple Music playlist link, or import a file.</p>
+    <ul>
+      <li><b>Apple Music:</b> in the Music app on a Mac (or iTunes on Windows), click a playlist, then File, Library, <b>Export Playlist</b>. <b>Export Library</b> does everything.</li>
+      <li><b>Shazam:</b> in Shazam on your iPhone, go to My Music, connect Apple Music and turn on Sync your songs. They show up in Apple Music as <b>My Shazam Tracks</b>. Export that playlist the same way.</li>
+    </ul>
+    <p>SoulSearch shows what's in the file before it downloads anything.</p>
+  </div>
+</div>
+<div class="win">
+  <div class="title">3. Getting tracks into Rekordbox<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="body">
+    <p>SoulSearch writes a file called <code>rekordbox_export.xml</code>. The Sync page shows where it is.</p>
+    <ol>
+      <li>In Rekordbox: Preferences, Advanced, Database, <b>rekordbox xml</b>. Point it at that file. One time only.</li>
+      <li>After downloads, press Reload on the <b>rekordbox xml</b> list, or restart Rekordbox. It only re-reads the file when it opens.</li>
+      <li>Right-click a playlist under rekordbox xml, then <b>Import Playlist</b>.</li>
+    </ol>
+  </div>
+</div>
+<div class="win">
+  <div class="title">4. Crate digging (optional)<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="body">
+    <p>Type a DJ, or one particular set, and SoulSearch finds the tracklists and fetches them. It needs a Claude to do the research. Pick one on the Setup page:</p>
+    <ul>
+      <li><b>Claude Code on this computer.</b> Uses the Claude login you already have. Install Claude Code, run <code>claude</code> in a terminal once, sign in with <code>/login</code>, then press Test sign-in in SoulSearch.</li>
+      <li><b>Your own API key.</b> Billed per use to your Anthropic account.</li>
+      <li><b>No Claude at all.</b> The Crate Digging page has a box that gives you a research brief. Paste it into any AI, then paste the answer back.</li>
+    </ul>
+    <p>The Research budget box on that page keeps usage down. Budget is the default.</p>
+  </div>
+</div>
+
+<footer>Not affiliated with Spotify, Apple, Shazam, Rekordbox or Soulseek.</footer>
+</main>
+<script src="site.js"></script>
+</body>
+</html>
