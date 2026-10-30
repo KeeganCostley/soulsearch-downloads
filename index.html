@@ -16,7 +16,7 @@
 <div class="win">
   <div class="title"><img src="bird.png" alt="">SoulSearch<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
   <div class="menu">
-    <a href="index.html" aria-current="page">Home</a><a href="peek.html">Take a peek</a><a href="guide.html">Setup guide</a><a href="troubleshooting.html">Troubleshooting</a>
+    <a href="index.html" aria-current="page">Home</a><a href="peek.html">Take a peek</a><a href="guide.html">Setup guide</a><a href="troubleshooting.html">Troubleshooting</a><button class="tip" type="button" data-tip hidden>Tip jar</button>
   </div>
   <div class="body">
     <div class="home">
@@ -34,7 +34,22 @@
 </div>
 
 </main>
+<dialog id="tip" class="tipbox">
+  <form method="dialog" class="tip-x"><button aria-label="Close">&times;</button></form>
+  <h2>Send a tip</h2>
+  <p>SoulSearch is free. If it saves you time, you can send a tip.</p>
+  <div class="tip-links" hidden></div>
+  <div class="tip-crypto" hidden>
+    <h3>Crypto</h3>
+    <div class="tip-coins" role="group" aria-label="Coin"></div>
+    <label class="tip-net">Network <select></select></label>
+    <img class="tip-qr" width="176" height="176" alt="">
+    <div class="tip-row"><input class="tip-addr" readonly aria-label="Address"><button type="button" class="tip-copy">Copy</button></div>
+    <p class="tip-warn"></p>
+  </div>
+</dialog>
 <div class="bar"><span data-count></span></div>
 <script src="site.js"></script>
+<script src="donate.js"></script>
 </body>
 </html>

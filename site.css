@@ -133,3 +133,33 @@ details > :not(summary) { margin-top: 6px; }
 .shot2 img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
 .shot2 figcaption { margin-top: 14px; font: 500 12px/1.5 var(--mono); color: var(--ink-soft); }
 .body.peek > .shot2 { max-width: 1068px; }
+
+/* ---- Tip jar: the button in the menu and the pop-up ---- */
+.menu .tip { margin-left: auto; background: transparent; border: 1px solid var(--ink); color: var(--ink); font: 700 12px/1.5 var(--mono); padding: 3px 14px; cursor: pointer; }
+.menu .tip:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+.menu .tip[hidden] { display: none; }
+.tipbox { width: min(480px, calc(100vw - 32px)); padding: 28px 30px 26px; background: var(--face-lit); color: var(--ink); border: 1px solid var(--ink); }
+.tipbox::backdrop { background: rgba(0, 0, 0, .5); }
+.tipbox h2 { margin: 0 0 6px; font: 700 16px/1.4 var(--mono); color: var(--ink); }
+.tipbox h3 { margin: 22px 0 10px; font: 700 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.tipbox p { margin: 0 0 16px; }
+.tipbox [hidden] { display: none; }
+.tip-x { position: absolute; top: 8px; right: 10px; margin: 0; }
+.tip-x button { background: none; border: 0; font: 400 24px/1 var(--sans); color: var(--ink-soft); cursor: pointer; padding: 2px 8px; }
+.tip-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.tip-links a { text-decoration: none; background: transparent; border: 1px solid var(--ink); font: 700 13px/1.5 var(--mono); padding: 8px 16px; color: var(--ink); }
+.tip-links a:visited { color: var(--ink); }
+.tip-links a:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+.tip-coins { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.tip-coins button { background: transparent; border: 1px solid var(--ink); font: 700 12px/1.5 var(--mono); padding: 4px 12px; cursor: pointer; color: var(--ink); }
+.tip-coins button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.tip-net { display: block; margin-bottom: 18px; font: 500 12px/1.5 var(--mono); }
+.tip-net select { margin-left: 8px; font: 500 13px var(--mono); padding: 3px 8px; border: 1px solid var(--ink); background: #fff; }
+.tip-qr { display: block; margin: 0 auto 18px; width: 176px; height: 176px; image-rendering: pixelated; border: 1px solid var(--line); }
+.tip-row { display: flex; gap: 8px; }
+.tip-addr { flex: 1; min-width: 0; font: 500 12px var(--mono); padding: 8px; border: 1px solid var(--ink); background: #fff; color: var(--ink); }
+.tip-copy { background: transparent; border: 1px solid var(--ink); font: 700 12px/1.5 var(--mono); padding: 0 16px; cursor: pointer; color: var(--ink); }
+.tip-copy:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+.tip-warn { margin: 14px 0 0 !important; font: 500 11px/1.5 var(--mono); color: #a80000; }
+.tip-x button { border-radius: 0; }
+.tipbox button:focus-visible, .tipbox a:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
