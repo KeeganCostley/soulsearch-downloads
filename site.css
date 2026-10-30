@@ -71,8 +71,8 @@ details > :not(summary) { margin-top: 6px; }
 .bar:has(:empty) { display: none; }
 
 /* About: an icon beside each paragraph, well spaced; downloads in a column on the right. */
-.ico { width: 44px; height: 44px; flex: none; color: var(--navy); fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: square; stroke-linejoin: miter; }
-.item { display: flex; gap: 24px; align-items: flex-start; margin-bottom: 72px; }
+.ico { width: 32px; height: 32px; flex: none; image-rendering: pixelated; margin-top: 2px; }
+.item { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 72px; }
 .item:last-child { margin-bottom: 0; }
 .item .big { margin: 0; }
 .about { margin-bottom: 40px; }
