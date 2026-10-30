@@ -11,7 +11,8 @@ body {
   font: 14px/1.6 var(--sans);
 }
 main { width: 100%; min-height: 100vh; display: flex; flex-direction: column; }
-.win:last-of-type { flex: 1; }
+.win:last-of-type { flex: 1; display: flex; flex-direction: column; }
+.note.count { margin: auto 0 0; padding: 16px; text-align: center; }
 a { color: var(--navy); }
 a:visited { color: #551a8b; }
 
