@@ -38,7 +38,6 @@ a:visited { color: #551a8b; }
 
 .status span:empty { display: none; }
 .note { font: 500 11px/1.6 var(--mono); color: var(--ink-soft); margin: 0; }
-[data-count]:not(:empty)::before { content: " · "; }
 
 h1 { font: 700 clamp(20px, 2.4vw, 24px)/1.2 var(--mono); margin: 0 0 24px; letter-spacing: -.03em; }
 h2 { font: 600 14px/1.4 var(--sans); margin: 22px 0 4px; color: var(--navy); }
