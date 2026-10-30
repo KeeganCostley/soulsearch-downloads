@@ -76,13 +76,21 @@ details > :not(summary) { margin-top: 6px; }
 .item:last-child { margin-bottom: 0; }
 .item .big { margin: 0; }
 .about { margin-bottom: 40px; }
-.body > .home { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 72px; align-items: start; max-width: none; }
+.body > .home { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 96px; align-items: center; max-width: none; }
 .home .about { margin-bottom: 0; }
 .home .downloads { flex-direction: column; margin: 0; }
 .home .dl { width: 100%; }
 .after-about { margin-top: 0; }
 @media (max-width: 800px) {
   .body > .home { grid-template-columns: 1fr; gap: 40px; }
-  .home .downloads { order: -1; }
+  .home .dlpanel { order: -1; }
   .item { margin-bottom: 48px; }
 }
+
+/* The download panel: a quiet card, centred against the text beside it. */
+.dlpanel { background: var(--face-lit); border: 1px solid var(--line); padding: 24px 24px 26px; }
+.dlpanel h2 { margin: 0 0 16px; font: 700 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft); }
+.home .dlpanel .downloads { gap: 12px; }
+.home .dlpanel .dl { background: var(--face); }
+.home .dlpanel .dl:hover { background: var(--navy); }
+.home .dlpanel .dl.mine { background: #fff; }
