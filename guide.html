@@ -72,18 +72,28 @@
   </div>
 </div>
 <div class="win">
-  <div class="title">3. Getting tracks into Rekordbox<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="title">3. Rekordbox: connect it to SoulSearch (one time)<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
   <div class="body">
-    <p>SoulSearch writes a file called <code>rekordbox_export.xml</code>. The Sync page shows where it is.</p>
-    <ol>
-      <li>In Rekordbox: Preferences, Advanced, Database, <b>rekordbox xml</b>. Point it at that file. One time only.</li>
-      <li>After downloads, press Reload on the <b>rekordbox xml</b> list, or restart Rekordbox. It only re-reads the file when it opens.</li>
-      <li>Right-click a playlist under rekordbox xml, then <b>Import Playlist</b>.</li>
-    </ol>
+    <p>SoulSearch writes a file called <code>rekordbox_export.xml</code>. The Sync page shows where it is. Rekordbox reads your SoulSearch playlists from that file, so you point it there once.</p>
+    <h2>1. Point Rekordbox at the file</h2>
+    <p>In Rekordbox: <b>File</b>, <b>Preferences</b>, <b>Advanced</b>, then the <b>Database</b> tab. Under <b>rekordbox xml</b>, click <b>Browse</b> next to <b>Imported Library</b> and choose <code>rekordbox_export.xml</code>.</p><figure class="shot2 rb" style="max-width:620px"><img src="rb-prefs-xml.png" alt="Rekordbox Preferences, Advanced, Database tab: the Imported Library box under rekordbox xml" width="1002" height="840"><figcaption>Preferences, Advanced, Database. Imported Library is the box that matters.</figcaption></figure>    <h2>2. Make the list show up</h2>
+    <p>Still in Preferences, open <b>View</b>, then the <b>Layout</b> tab. Under <b>Media Browser</b>, tick <b>rekordbox xml</b>. Close Preferences.</p><figure class="shot2 rb" style="max-width:620px"><img src="rb-prefs-layout.png" alt="Rekordbox Preferences, View, Layout tab: the rekordbox xml tick box under Media Browser" width="1002" height="840"><figcaption>Preferences, View, Layout. Tick rekordbox xml.</figcaption></figure>    <h2>3. Open the list</h2>
+    <p>Down the far left edge of the library there is a strip of small icons. Click the <b>last one</b>. The <b>rekordbox xml</b> list opens, with <b>All Tracks</b> and <b>Playlists</b> under it.</p><figure class="shot2 rb" style="max-width:560px"><img src="rb-xml-open.png" alt="The strip of icons at the left of Rekordbox's library with the last icon highlighted, and the rekordbox xml list with its Reload button" width="910" height="738"><figcaption>The last icon opens the list. The circle on the right of the rekordbox xml row is Reload.</figcaption></figure>
   </div>
 </div>
 <div class="win">
-  <div class="title">4. Crate digging (optional)<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="title">4. After every sync: Reload, then import<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
+  <div class="body">
+    <p>Rekordbox only reads the file when it opens, or when you press Reload. If you skip this, new tracks will not show up.</p>
+    <h2>1. Press Reload</h2>
+    <p>On the <b>rekordbox xml</b> row, press the small circle arrow on the right. That is <b>Reload</b>. Restarting Rekordbox does the same thing.</p><figure class="shot2 rb" style="max-width:620px"><img src="rb-xml-playlists.png" alt="The rekordbox xml list with the Reload button marked and the SoulSearch playlists listed" width="814" height="318"><figcaption>Reload is on the rekordbox xml row. Your playlists are under Playlists, in the dj-auto-downloader folder.</figcaption></figure>    <h2>2. Import the playlist</h2>
+    <p>Open <b>Playlists</b>, then <b>dj-auto-downloader</b>. Each source has its own playlist, named after its folder. <b>Right-click</b> the one you want and choose <b>Import Playlist</b>.</p><figure class="shot2 rb" style="max-width:620px"><img src="rb-import.png" alt="Right-clicking a playlist in the rekordbox xml list, with Import Playlist in the menu" width="814" height="408"><figcaption>Right-click a playlist, then Import Playlist.</figcaption></figure>    <h2>3. If it asks to replace</h2>
+    <p>Rekordbox may say a list with the same name already exists and ask to replace it. Choose <b>Yes</b>. That is normal. Your new tracks are now in your collection and in that playlist.</p>
+    <p>Tracks still missing? See <a href="troubleshooting.html">Troubleshooting</a>.</p>
+  </div>
+</div>
+<div class="win">
+  <div class="title">5. Crate digging (optional)<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
   <div class="body">
     <p>Type a DJ, or one particular set, and SoulSearch finds the tracklists and fetches them. It needs a Claude to do the research. Pick one on the Setup page:</p>
     <ul>

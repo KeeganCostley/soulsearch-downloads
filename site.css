@@ -163,3 +163,5 @@ details > :not(summary) { margin-top: 6px; }
 .tip-warn { margin: 14px 0 0 !important; font: 500 11px/1.5 var(--mono); color: #a80000; }
 .tip-x button { border-radius: 0; }
 .tipbox button:focus-visible, .tipbox a:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+.shot2.rb { margin: 14px 0 40px; }
+.shot2.rb img { border-color: var(--ink-soft); }
