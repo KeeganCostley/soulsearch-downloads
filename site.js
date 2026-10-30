@@ -13,7 +13,8 @@ for (const el of document.querySelectorAll(`[data-os="${mine}"]`)) {
 }
 
 const cards = [...document.querySelectorAll(".dl[data-asset]")];
-if (cards.length) {
+const bar = document.querySelector("[data-count]");
+if (cards.length || bar) {
   fetch(`https://api.github.com/repos/${REPO}/releases?per_page=100`, { headers: { Accept: "application/vnd.github+json" } })
     .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
     .then((all) => {
@@ -21,8 +22,12 @@ if (cards.length) {
       if (!rel) return Promise.reject("no release");
       // GitHub counts every download of every release file; add them all up.
       const total = all.reduce((n, x) => n + (x.assets || []).reduce((m, a) => m + a.download_count, 0), 0);
-      const count = document.querySelector("[data-count]");
-      if (count && total > 0) count.textContent = `${total.toLocaleString("en-GB")} download${total === 1 ? "" : "s"}`;
+      const when0 = new Date(rel.published_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+      if (bar) {
+        const bits = [rel.tag_name, `updated ${when0}`];
+        if (total > 0) bits.push(`${total.toLocaleString("en-GB")} download${total === 1 ? "" : "s"}`);
+        bar.textContent = bits.join(" · ");
+      }
       const when = new Date(rel.published_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
       for (const card of cards) {
         const asset = (rel.assets || []).find((a) => a.name === card.dataset.asset);
