@@ -50,8 +50,8 @@ li { margin-bottom: 10px; }
 code, kbd { font: 500 13px var(--mono); background: #fff; padding: 0 4px;
   border-top: 1px solid var(--grey); border-left: 1px solid var(--grey); border-right: 1px solid var(--white); border-bottom: 1px solid var(--white); }
 
-.downloads { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0 4px; }
-.dl { display: block; text-decoration: none; color: var(--ink); text-align: center; padding: 14px 12px; background: var(--face);
+.downloads { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 4px; }
+.dl { display: block; text-decoration: none; color: var(--ink); text-align: center; width: 230px; padding: 9px 12px; background: var(--face);
   border-top: 1px solid var(--white); border-left: 1px solid var(--white); border-right: 1px solid var(--dark); border-bottom: 1px solid var(--dark);
   box-shadow: inset -1px -1px 0 var(--grey), inset 1px 1px 0 var(--face-lit); }
 .dl:visited { color: var(--ink); }
@@ -75,6 +75,6 @@ footer { color: #8a8a8a; font: 500 12px/1.5 var(--mono); text-align: center; pad
 footer a { color: #aaa; }
 
 @media (max-width: 560px) {
-  .downloads { grid-template-columns: 1fr; } h1 { font-size: 28px; }
+  .dl { width: 100%; } h1 { font-size: 28px; }
   .win { box-shadow: inset -1px -1px 0 var(--grey), inset 1px 1px 0 var(--face-lit), 3px 3px 0 rgba(0,0,0,.55); }
 }
