@@ -29,12 +29,17 @@ if (cards.length || bar) {
         bar.textContent = bits.join(" · ");
       }
       const when = new Date(rel.published_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+      // Each button takes the newest release that actually has its file, so a release that is
+      // Windows-only for a while doesn't take the Mac button away.
+      const live = all.filter((x) => !x.draft && !x.prerelease);
       for (const card of cards) {
-        const asset = (rel.assets || []).find((a) => a.name === card.dataset.asset);
+        const from = live.find((x) => (x.assets || []).some((a) => a.name === card.dataset.asset));
+        const asset = from && from.assets.find((a) => a.name === card.dataset.asset);
         const meta = card.querySelector("[data-meta]");
         if (asset) {
+          const made = new Date(from.published_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
           card.href = asset.browser_download_url;
-          meta.textContent = `${rel.tag_name} · ${(asset.size / 1048576).toFixed(0)} MB · ${when}`;
+          meta.textContent = `${from.tag_name} · ${(asset.size / 1048576).toFixed(0)} MB · ${made}`;
         } else {
           card.classList.add("soon");
           meta.textContent = "Not up yet";

@@ -69,3 +69,20 @@ details > :not(summary) { margin-top: 6px; }
 .bar { position: fixed; left: 0; right: 0; bottom: 0; text-align: center; padding: 9px 12px; background: var(--face);
   border-top: 1px solid var(--line); font: 500 11px/1.5 var(--mono); color: var(--ink-soft); }
 .bar:has(:empty) { display: none; }
+
+/* About: an icon beside each paragraph, well spaced; downloads in a column on the right. */
+.ico { width: 44px; height: 44px; flex: none; color: var(--navy); fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: square; stroke-linejoin: miter; }
+.item { display: flex; gap: 24px; align-items: flex-start; margin-bottom: 72px; }
+.item:last-child { margin-bottom: 0; }
+.item .big { margin: 0; }
+.about { margin-bottom: 40px; }
+.body > .home { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 72px; align-items: start; max-width: none; }
+.home .about { margin-bottom: 0; }
+.home .downloads { flex-direction: column; margin: 0; }
+.home .dl { width: 100%; }
+.after-about { margin-top: 0; }
+@media (max-width: 800px) {
+  .body > .home { grid-template-columns: 1fr; gap: 40px; }
+  .home .downloads { order: -1; }
+  .item { margin-bottom: 48px; }
+}
