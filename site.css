@@ -39,7 +39,7 @@ a:visited { color: #551a8b; }
 .note { font: 500 13px/1.6 var(--mono); color: var(--ink-soft); margin: 0; }
 [data-count]:not(:empty)::before { content: " · "; }
 
-h1 { font: 700 clamp(34px, 6vw, 56px)/1.05 var(--mono); margin: 0 0 24px; letter-spacing: -.03em; }
+h1 { font: 700 clamp(24px, 3vw, 32px)/1.15 var(--mono); margin: 0 0 24px; letter-spacing: -.03em; }
 h2 { font: 600 17px/1.4 var(--sans); margin: 22px 0 4px; color: var(--navy); }
 h2:first-child { margin-top: 0; }
 p { margin: 0 0 10px; }
