@@ -23,7 +23,8 @@
     for (const l of links) {
       const a = document.createElement("a");
       a.href = l.url;
-      a.textContent = l.name;
+      a.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M4 9h12v6a5 5 0 0 1-5 5h-2a5 5 0 0 1-5-5z"/><path d="M16 11h2a2.5 2.5 0 0 1 0 5h-2"/><path d="M8 2v3M12 2v3"/></svg>';
+      a.append(" " + l.name);
       a.target = "_blank";
       a.rel = "noopener";
       box.append(a);

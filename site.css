@@ -147,7 +147,7 @@ details > :not(summary) { margin-top: 6px; }
 .tip-x { position: absolute; top: 8px; right: 10px; margin: 0; }
 .tip-x button { background: none; border: 0; font: 400 24px/1 var(--sans); color: var(--ink-soft); cursor: pointer; padding: 2px 8px; }
 .tip-links { display: flex; flex-wrap: wrap; gap: 8px; }
-.tip-links a { text-decoration: none; background: transparent; border: 1px solid var(--ink); font: 700 13px/1.5 var(--mono); padding: 8px 16px; color: var(--ink); }
+.tip-links a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; background: transparent; border: 1px solid var(--ink); font: 700 13px/1.5 var(--mono); padding: 8px 16px; color: var(--ink); }
 .tip-links a:visited { color: var(--ink); }
 .tip-links a:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
 .tip-coins { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
