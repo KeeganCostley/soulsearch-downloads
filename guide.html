@@ -20,7 +20,7 @@
   </div>
   <div class="body">
     <h1>Setup guide</h1>
-    <p class="after-about">The app has a Setup page that walks through this in order. This is the same thing with the reasons.</p>
+    <p class="after-about">The app's Settings page walks through this in order, top to bottom. This is the same thing with the reasons.</p>
   </div>
 </div>
 <div class="win">
@@ -41,11 +41,11 @@
     <h2>Rekordbox folder</h2>
     <p>Pick the folder where downloads go. Each source gets its own folder next to it, which becomes its own playlist in Rekordbox.</p>
     <h2>slskd and ffmpeg</h2>
-    <p>Two buttons on the Setup page, <b>Install</b> next to each. slskd is the Soulseek client SoulSearch drives. ffmpeg is for the SoundCloud fallback. Both come from their official sources.</p>
+    <p>Two buttons on the Settings page, <b>Install</b> next to each. slskd is the Soulseek client SoulSearch drives. ffmpeg is for the SoundCloud fallback. Both come from their official sources.</p>
     <h2>File types</h2>
-    <p>Setup, Quality. Pick <b>MP3 only</b>, <b>FLAC first with a 320 kbps MP3 as the backup</b>, or <b>FLAC only</b>. FLAC files are three to four times the size of an MP3. There's also a box to turn the SoundCloud backup off, for Soulseek only.</p>
+    <p>Settings, Quality. Pick <b>MP3 only</b>, <b>FLAC first with a 320 kbps MP3 as the backup</b>, or <b>FLAC only</b>. FLAC files are three to four times the size of an MP3. There's also a box to turn the SoundCloud backup off, for Soulseek only.</p>
     <h2>Speed</h2>
-    <p>Setup, Quality, <b>Tracks to download at once</b>. The default is 3, so big lists finish about three times sooner. 1 goes one track at a time. Go much above 3 and Soulseek may slow you down.</p>
+    <p>Settings, Quality, <b>Tracks to download at once</b>. The default is 3, so big lists finish about three times sooner. 1 goes one track at a time. Go much above 3 and Soulseek may slow you down.</p>
     <h2>Soulseek login</h2>
     <p>Nothing to sign up for. The first time it starts it makes a private login of its own and keeps the password in your computer's secure store. Only fill the boxes in if you already have an account you'd rather use.</p>
   </div>
@@ -58,7 +58,7 @@
     <ol>
       <li>Go to <a href="https://developer.spotify.com/dashboard">developer.spotify.com/dashboard</a> and create an app. Any name and description.</li>
       <li>In its settings add the Redirect URI <code>http://127.0.0.1:8888/callback</code>. Exactly that. <code>localhost</code> won't work.</li>
-      <li>Copy the Client ID and Client Secret into the Setup page.</li>
+      <li>Copy the Client ID and Client Secret into the Settings page.</li>
     </ol>
     <h2>SoundCloud</h2>
     <p>No account or key. Paste your public profile link.</p>
@@ -97,7 +97,7 @@
 <div class="win">
   <div class="title">5. Crate digging (optional)<span class="ctl" aria-hidden="true"><i>_</i><i>□</i><i>x</i></span></div>
   <div class="body">
-    <p>Type a DJ, or one particular set, and SoulSearch finds the tracklists and fetches them. It needs a Claude to do the research. Pick one on the Setup page:</p>
+    <p>Type a DJ, or one particular set, and SoulSearch finds the tracklists and fetches them. It needs a Claude to do the research. Pick one on the Settings page:</p>
     <ul>
       <li><b>Claude Code on this computer.</b> Uses the Claude login you already have. Install Claude Code, run <code>claude</code> in a terminal once, sign in with <code>/login</code>, then press Test sign-in in SoulSearch.</li>
       <li><b>Your own API key.</b> Billed per use to your Anthropic account.</li>
