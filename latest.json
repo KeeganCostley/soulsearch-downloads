@@ -1,6 +1,22 @@
 {
  "releases": [
   {
+   "tag_name": "v0.5.4",
+   "draft": false,
+   "prerelease": false,
+   "body": "Fetch missing tracklists now works whatever way the artist's name was typed (it failed on lowercase names like 'ben klock'). The app looks better full screen: the menu stays in view while you scroll and the content is centred.",
+   "published_at": "2026-11-09T14:53:05Z",
+   "html_url": "https://github.com/KeeganCostley/soulsearch-downloads/releases/tag/v0.5.4",
+   "assets": [
+    {
+     "name": "SoulSearch.exe",
+     "size": 71018209,
+     "digest": "sha256:ecbcc37aaaa55f0ee1b2efeb2401354c29ec4e54eab9e5a5887b7869da79bce9",
+     "browser_download_url": "https://github.com/KeeganCostley/soulsearch-downloads/releases/download/v0.5.4/SoulSearch.exe"
+    }
+   ]
+  },
+  {
    "tag_name": "v0.5.3",
    "draft": false,
    "prerelease": false,
