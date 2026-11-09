@@ -165,3 +165,13 @@ details > :not(summary) { margin-top: 6px; }
 .tipbox button:focus-visible, .tipbox a:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 .shot2.rb { margin: 14px 0 40px; }
 .shot2.rb img { border-color: var(--ink-soft); }
+
+/* contact form */
+.contact label { display: block; margin: 0 0 14px; font: 700 12px/1.5 var(--mono); color: var(--ink); }
+.contact select, .contact input, .contact textarea { display: block; width: 100%; margin-top: 4px; padding: 7px 9px; font: 400 15px/1.4 var(--sans); color: var(--ink); background: #fff; border: 1px solid var(--ink); border-radius: 0; box-sizing: border-box; }
+.contact textarea { resize: vertical; }
+.contact .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.contact-row { display: flex; align-items: center; gap: 14px; }
+.contact button { background: var(--navy); color: #fff; border: 1px solid var(--navy); font: 700 13px/1.5 var(--mono); padding: 8px 22px; cursor: pointer; }
+.contact button:disabled { opacity: .6; cursor: default; }
+.contact-status { font: 500 13px/1.4 var(--mono); }
